@@ -82,10 +82,12 @@ struct ElementsAPI {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do {
-                    
+                    let favoriteElements = try JSONDecoder().decode([Elements].self, from: data)
+                    completion(.success(favoriteElements))
                 } catch {
-                    
+                    completion(.failure(.decodingError(error)))
                 }
             }
         }
+    }
 }
