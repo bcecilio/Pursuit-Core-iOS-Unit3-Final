@@ -10,6 +10,7 @@ import UIKit
 
 class DetailController: UIViewController {
     
+    @IBOutlet weak var elementImageView: UIImageView!
     @IBOutlet weak var elementNumber: UILabel!
     @IBOutlet weak var elementName: UILabel!
     @IBOutlet weak var bolingPoint: UILabel!
@@ -29,7 +30,7 @@ class DetailController: UIViewController {
         guard let favoriteElement = elementDetail else {
             return
         }
-        let favorites = Elements(name: favoriteElement.name, number: favoriteElement.number, symbol: favoriteElement.symbol, discoveredBy: favoriteElement.discoveredBy, melt: favoriteElement.melt, boil: favoriteElement.boil, id: favoriteElement.id, favoritedBy: "Brendon", image: favoriteElement.image, atomicMass: favoriteElement.atomicMass)
+        let favorites = Elements(name: favoriteElement.name, number: favoriteElement.number, symbol: favoriteElement.symbol, discoveredBy: favoriteElement.discoveredBy, melt: favoriteElement.melt, boil: favoriteElement.boil, id: favoriteElement.id, favoritedBy: "Brendon", atomicMass: favoriteElement.atomicMass)
         
         ElementsAPI.favoriteElement(elements: favorites) { (result) in
             switch result {
@@ -56,5 +57,21 @@ class DetailController: UIViewController {
         bolingPoint.text = "Boiling Point: \(favorites.boil?.description ?? "NA")"
         meltingPoint.text = "Melting Point: \(favorites.melt?.description ?? "NA")"
         discoveredBy.text = "Discovered by: \(favorites.discoveredBy ?? "NA")"
+        
+        let elementNum = favorites.name.lowercased()
+        let imageUrl = "http://images-of-elements.com/\(elementNum).jpg"
+        
+        elementImageView.getImage(with: imageUrl) { [weak self] (result) in
+            switch result {
+            case .failure(_):
+                DispatchQueue.main.async{
+                    self?.elementImageView.image = UIImage(systemName: "exclamationmark.fill")
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                self?.elementImageView.image = image
+                }
+            }
+        }
     }
 }

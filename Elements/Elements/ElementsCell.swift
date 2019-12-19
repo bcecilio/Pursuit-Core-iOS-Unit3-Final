@@ -18,7 +18,7 @@ class ElementsCell: UITableViewCell {
     func configureElementCell(for elementData: Elements) {
         
         elementName.text = elementData.name
-        elementNumber.text = "\(elementData.number.description) | \(elementData.atomicMass?.description ?? "")"
+        elementNumber.text = "\(elementData.number.description) | \(elementData.atomicMass ?? 0)"
        
         var elementNum = String(elementData.number)
         
