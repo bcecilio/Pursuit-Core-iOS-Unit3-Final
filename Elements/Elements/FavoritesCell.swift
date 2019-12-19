@@ -11,13 +11,13 @@ import UIKit
 class FavoritesCell: UITableViewCell {
 
     @IBOutlet weak var favoritesImageView: UIImageView!
-    @IBOutlet weak var elementName: UILabel!
-    @IBOutlet weak var elementNumber: UILabel!
+    @IBOutlet weak var favoritesName: UILabel!
+    @IBOutlet weak var favortiesNumber: UILabel!
     
     func configureElementCell(for elementData: Elements) {
         
-        elementName.text = elementData.name
-        elementNumber.text = elementData.number.description
+        favoritesName.text = elementData.name
+        favortiesNumber.text = elementData.number.description
         
 //        elementImageView.getImage(with: <#T##String#>, completion: <#T##(Result<UIImage, AppError>) -> ()#>)
     }
