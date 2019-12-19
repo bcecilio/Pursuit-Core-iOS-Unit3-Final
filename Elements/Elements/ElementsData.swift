@@ -15,6 +15,8 @@ struct Elements: Codable {
     let discoveredBy: String?
     let melt: Double?
     let boil: Double?
+    let id: Int?
+    let favoritedBy: String?
     
     enum CodingKeys: String, CodingKey {
         case discoveredBy = "discovered_by"
@@ -23,5 +25,7 @@ struct Elements: Codable {
         case symbol
         case name
         case number
+        case id
+        case favoritedBy
     }
 }

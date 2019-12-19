@@ -22,7 +22,16 @@ class FavoriteController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadFavorites()
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailController = segue.destination as? DetailController, let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        detailController.elementDetail = favoriteElements[indexPath.row]
     }
     
     @objc func loadFavorites() {
@@ -52,6 +61,10 @@ extension FavoriteController: UITableViewDataSource {
         cell.configureFavoriteCell(for: favoriteCell)
         return cell
     }
-    
-    
+}
+
+extension FavoriteController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
+    }
 }

@@ -27,6 +27,13 @@ class ViewController: UIViewController {
         tableView.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailController = segue.destination as? DetailController, let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        detailController.elementDetail = elements[indexPath.row]
+    }
+    
     func loadData() {
         ElementsAPI.fetchElements { [weak self] (result) in
             switch result {
@@ -58,7 +65,7 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 130
     }
 }
 
