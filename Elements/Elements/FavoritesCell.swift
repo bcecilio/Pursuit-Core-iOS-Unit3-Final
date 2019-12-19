@@ -14,7 +14,7 @@ class FavoritesCell: UITableViewCell {
     @IBOutlet weak var favoritesName: UILabel!
     @IBOutlet weak var favortiesNumber: UILabel!
     
-    func configureElementCell(for elementData: Elements) {
+    func configureFavoriteCell(for elementData: Elements) {
         
         favoritesName.text = elementData.name
         favortiesNumber.text = elementData.number.description

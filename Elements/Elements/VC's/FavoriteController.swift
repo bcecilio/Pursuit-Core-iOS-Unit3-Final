@@ -9,22 +9,49 @@
 import UIKit
 
 class FavoriteController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var favoriteElements = [Elements]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func loadFavorites() {
+        ElementsAPI.getFavoriteElements { [weak self] (result) in
+            switch result {
+            case .failure(let appError):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "AppError", message: "\(appError)")
+                }
+            case .success(let favorites):
+                self?.favoriteElements = favorites
+            }
+        }
     }
-    */
+}
 
+extension FavoriteController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return favoriteElements.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as? FavoritesCell else {
+            fatalError("could not dequeue from favorite cell")
+        }
+        let favoriteCell = favoriteElements[indexPath.row]
+        cell.configureFavoriteCell(for: favoriteCell)
+        return cell
+    }
+    
+    
 }
