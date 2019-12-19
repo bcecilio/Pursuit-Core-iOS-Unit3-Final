@@ -13,21 +13,32 @@ class ElementsCell: UITableViewCell {
     @IBOutlet weak var elementImageView: UIImageView!
     @IBOutlet weak var elementName: UILabel!
     @IBOutlet weak var elementNumber: UILabel!
+
     
     func configureElementCell(for elementData: Elements) {
         
         elementName.text = elementData.name
-        elementNumber.text = elementData.number.description
+        elementNumber.text = "\(elementData.number.description) | \(elementData.atomicMass?.description ?? "")"
+       
+        var elementNum = String(elementData.number)
         
-        elementImage.getElementImage(with: 10) { (result) in
+        if elementNum.count == 1 {
+            elementNum = "00" + elementNum
+        } else if elementNum.count == 0 {
+            elementNum = "0" + elementNum
+        }
+        
+        let imageUrl = "http://www.theodoregray.com/periodictable/Tiles/\(elementNum)/s7.JPG"
+        
+        elementImageView.getImage(with: imageUrl) { [weak self] (result) in
             switch result {
-            case .failure( _):
-                DispatchQueue.main.async {
-                    self.elementImageView.image = UIImage(systemName: "exclamationmark.fill")
+            case .failure(_):
+                DispatchQueue.main.async{
+                    self?.elementImageView.image = UIImage(systemName: "exclamationmark.fill")
                 }
-            case .success( _):
+            case .success(let image):
                 DispatchQueue.main.async {
-                    self.elementImageView.image = UIImage(contentsOfFile: elementData.id!)
+                self?.elementImageView.image = image
                 }
             }
         }

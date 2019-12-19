@@ -17,6 +17,8 @@ struct Elements: Codable {
     let boil: Double?
     let id: String?
     let favoritedBy: String?
+    let image: String?
+    let atomicMass: Double?
     
     enum CodingKeys: String, CodingKey {
         case discoveredBy = "discovered_by"
@@ -27,5 +29,7 @@ struct Elements: Codable {
         case number
         case id
         case favoritedBy
+        case image
+        case atomicMass
     }
 }

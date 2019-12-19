@@ -22,7 +22,6 @@
 		B71A002623ABCB42007E35AF /* UIView+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A002523ABCB42007E35AF /* UIView+Alerts.swift */; };
 		B71A002B23ABCF79007E35AF /* ElementsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A002A23ABCF79007E35AF /* ElementsData.swift */; };
 		B71A002D23ABD1AF007E35AF /* ElementsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A002C23ABD1AF007E35AF /* ElementsAPI.swift */; };
-		B7A0955123ABEDE7002ADC9E /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0955023ABEDE7002ADC9E /* ImageAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		B71A002523ABCB42007E35AF /* UIView+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Alerts.swift"; sourceTree = "<group>"; };
 		B71A002A23ABCF79007E35AF /* ElementsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsData.swift; sourceTree = "<group>"; };
 		B71A002C23ABD1AF007E35AF /* ElementsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsAPI.swift; sourceTree = "<group>"; };
-		B7A0955023ABEDE7002ADC9E /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +113,6 @@
 				B71A001F23ABCB02007E35AF /* NetworkHelper.swift */,
 				B71A002123ABCB21007E35AF /* AppError.swift */,
 				B71A002C23ABD1AF007E35AF /* ElementsAPI.swift */,
-				B7A0955023ABEDE7002ADC9E /* ImageAPI.swift */,
 			);
 			path = "Network Service";
 			sourceTree = "<group>";
@@ -207,7 +204,6 @@
 				B71A002223ABCB21007E35AF /* AppError.swift in Sources */,
 				B715677423ABD753009D3416 /* FavoritesCell.swift in Sources */,
 				B71A002023ABCB02007E35AF /* NetworkHelper.swift in Sources */,
-				B7A0955123ABEDE7002ADC9E /* ImageAPI.swift in Sources */,
 				B715677223ABD740009D3416 /* ElementsCell.swift in Sources */,
 				B71A002623ABCB42007E35AF /* UIView+Alerts.swift in Sources */,
 				B71A002B23ABCF79007E35AF /* ElementsData.swift in Sources */,

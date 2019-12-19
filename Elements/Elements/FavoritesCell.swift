@@ -17,19 +17,29 @@ class FavoritesCell: UITableViewCell {
     func configureFavoriteCell(for elementData: Elements) {
         
         favoritesName.text = elementData.name
-        favortiesNumber.text = elementData.number.description
+        favortiesNumber.text = "\(elementData.number.description) | \(elementData.atomicMass?.description ?? "")"
         
-        favoritesImageView.getImage(with: elementData.id ?? "") { (result) in
+        var elementNum = String(elementData.number)
+        
+        if elementNum.count == 1 {
+            elementNum = "00" + elementNum
+        } else if elementNum.count == 0 {
+            elementNum = "0" + elementNum
+        }
+        
+        let imageUrl = "http://www.theodoregray.com/periodictable/Tiles/\(elementNum)/s7.JPG"
+        
+        favoritesImageView.getImage(with: imageUrl) { [weak self] (result) in
             switch result {
             case .failure(_):
-                DispatchQueue.main.async {
-                    self.favoritesImageView.image = UIImage(systemName: "exclamationmark.fill")
+                DispatchQueue.main.async{
+                    self?.favoritesImageView.image = UIImage(systemName: "exclamationmark.fill")
                 }
-            case .success( _):
+            case .success(let image):
                 DispatchQueue.main.async {
-                    self.favoritesImageView.image = UIImage(contentsOfFile: elementData.id!)
+                self?.favoritesImageView.image = image
                 }
             }
         }
+        }
     }
-}

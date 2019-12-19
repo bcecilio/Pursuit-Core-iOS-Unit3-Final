@@ -21,6 +21,7 @@ class DetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        navigationItem.title = String(describing: elementDetail?.name)
     }
     
     @IBAction func favoriteButtonPressed(_ sender: UIBarButtonItem) {
@@ -28,7 +29,7 @@ class DetailController: UIViewController {
         guard let favoriteElement = elementDetail else {
             return
         }
-        let favorites = Elements(name: favoriteElement.name, number: favoriteElement.number, symbol: favoriteElement.symbol, discoveredBy: favoriteElement.discoveredBy, melt: favoriteElement.melt, boil: favoriteElement.boil, id: favoriteElement.id, favoritedBy: "Brendon")
+        let favorites = Elements(name: favoriteElement.name, number: favoriteElement.number, symbol: favoriteElement.symbol, discoveredBy: favoriteElement.discoveredBy, melt: favoriteElement.melt, boil: favoriteElement.boil, id: favoriteElement.id, favoritedBy: "Brendon", image: favoriteElement.image, atomicMass: favoriteElement.atomicMass)
         
         ElementsAPI.favoriteElement(elements: favorites) { (result) in
             switch result {

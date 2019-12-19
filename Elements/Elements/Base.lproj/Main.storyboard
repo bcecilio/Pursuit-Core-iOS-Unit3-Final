@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Elements-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Elements" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aAu-Nd-hpK"/>
+                    <navigationItem key="navigationItem" title="Elements" id="aAu-Nd-hpK"/>
                     <connections>
                         <outlet property="tableView" destination="zXu-Zc-TMy" id="AHC-Sy-CZL"/>
                     </connections>
@@ -140,7 +140,7 @@
             </objects>
             <point key="canvasLocation" x="2743.4782608695655" y="173.4375"/>
         </scene>
-        <!--Favorite Controller-->
+        <!--Favorited Elements-->
         <scene sceneID="3W7-mx-c8p">
             <objects>
                 <viewController id="mSO-RS-kYd" customClass="FavoriteController" customModule="Elements" customModuleProvider="target" sceneMemberID="viewController">
@@ -210,7 +210,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zL4-Wb-Ciy"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Faj-Bc-I1L"/>
+                    <navigationItem key="navigationItem" title="Favorited Elements" id="Faj-Bc-I1L"/>
                     <connections>
                         <outlet property="tableView" destination="lOs-VJ-zyv" id="jBO-OB-AMk"/>
                     </connections>
@@ -283,6 +283,6 @@
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pFX-t2-3bO"/>
+        <segue reference="muN-29-aLa"/>
     </inferredMetricsTieBreakers>
 </document>
