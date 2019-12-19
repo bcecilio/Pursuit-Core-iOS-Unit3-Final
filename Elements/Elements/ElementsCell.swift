@@ -19,6 +19,17 @@ class ElementsCell: UITableViewCell {
         elementName.text = elementData.name
         elementNumber.text = elementData.number.description
         
-//        elementImageView.getImage(with: <#T##String#>, completion: <#T##(Result<UIImage, AppError>) -> ()#>)
+        elementImage.getElementImage(with: 10) { (result) in
+            switch result {
+            case .failure( _):
+                DispatchQueue.main.async {
+                    self.elementImageView.image = UIImage(systemName: "exclamationmark.fill")
+                }
+            case .success( _):
+                DispatchQueue.main.async {
+                    self.elementImageView.image = UIImage(contentsOfFile: elementData.id!)
+                }
+            }
+        }
     }
 }

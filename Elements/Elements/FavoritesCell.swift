@@ -19,6 +19,17 @@ class FavoritesCell: UITableViewCell {
         favoritesName.text = elementData.name
         favortiesNumber.text = elementData.number.description
         
-//        elementImageView.getImage(with: <#T##String#>, completion: <#T##(Result<UIImage, AppError>) -> ()#>)
+        favoritesImageView.getImage(with: elementData.id ?? "") { (result) in
+            switch result {
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.favoritesImageView.image = UIImage(systemName: "exclamationmark.fill")
+                }
+            case .success( _):
+                DispatchQueue.main.async {
+                    self.favoritesImageView.image = UIImage(contentsOfFile: elementData.id!)
+                }
+            }
+        }
     }
 }
