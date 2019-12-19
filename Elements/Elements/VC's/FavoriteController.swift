@@ -42,7 +42,7 @@ class FavoriteController: UIViewController {
                     self?.showAlert(title: "AppError", message: "\(appError)")
                 }
             case .success(let favorites):
-                self?.favoriteElements = favorites
+                self?.favoriteElements = favorites.filter{$0.favoritedBy == "Brendon"}
             }
         }
     }

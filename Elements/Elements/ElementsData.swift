@@ -15,7 +15,7 @@ struct Elements: Codable {
     let discoveredBy: String?
     let melt: Double?
     let boil: Double?
-    let id: Int?
+    let id: String?
     let favoritedBy: String?
     
     enum CodingKeys: String, CodingKey {
