@@ -12,6 +12,16 @@
 		5734756721DA90C700FB6177 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5734756521DA90C700FB6177 /* Main.storyboard */; };
 		5734756921DA90C800FB6177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5734756821DA90C800FB6177 /* Assets.xcassets */; };
 		5734756C21DA90C800FB6177 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5734756A21DA90C800FB6177 /* LaunchScreen.storyboard */; };
+		B715677223ABD740009D3416 /* ElementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715677123ABD740009D3416 /* ElementsCell.swift */; };
+		B715677423ABD753009D3416 /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B715677323ABD753009D3416 /* FavoritesCell.swift */; };
+		B71A001C23ABCAEB007E35AF /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A001B23ABCAEB007E35AF /* DetailController.swift */; };
+		B71A001E23ABCAF6007E35AF /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A001D23ABCAF6007E35AF /* FavoriteController.swift */; };
+		B71A002023ABCB02007E35AF /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A001F23ABCB02007E35AF /* NetworkHelper.swift */; };
+		B71A002223ABCB21007E35AF /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A002123ABCB21007E35AF /* AppError.swift */; };
+		B71A002423ABCB33007E35AF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A002323ABCB33007E35AF /* UIImage+Extension.swift */; };
+		B71A002623ABCB42007E35AF /* UIView+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A002523ABCB42007E35AF /* UIView+Alerts.swift */; };
+		B71A002B23ABCF79007E35AF /* ElementsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A002A23ABCF79007E35AF /* ElementsData.swift */; };
+		B71A002D23ABD1AF007E35AF /* ElementsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A002C23ABD1AF007E35AF /* ElementsAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +32,16 @@
 		5734756821DA90C800FB6177 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5734756B21DA90C800FB6177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5734756D21DA90C800FB6177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B715677123ABD740009D3416 /* ElementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsCell.swift; sourceTree = "<group>"; };
+		B715677323ABD753009D3416 /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
+		B71A001B23ABCAEB007E35AF /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		B71A001D23ABCAF6007E35AF /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
+		B71A001F23ABCB02007E35AF /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		B71A002123ABCB21007E35AF /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		B71A002323ABCB33007E35AF /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		B71A002523ABCB42007E35AF /* UIView+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Alerts.swift"; sourceTree = "<group>"; };
+		B71A002A23ABCF79007E35AF /* ElementsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsData.swift; sourceTree = "<group>"; };
+		B71A002C23ABD1AF007E35AF /* ElementsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +74,12 @@
 		5734756021DA90C700FB6177 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				5734756321DA90C700FB6177 /* ViewController.swift */,
+				B715677123ABD740009D3416 /* ElementsCell.swift */,
+				B715677323ABD753009D3416 /* FavoritesCell.swift */,
+				B71A002A23ABCF79007E35AF /* ElementsData.swift */,
+				B71A002923ABCD02007E35AF /* Extensions */,
+				B71A002723ABCB60007E35AF /* VC's */,
+				B71A002823ABCB6F007E35AF /* Network Service */,
 				5734756521DA90C700FB6177 /* Main.storyboard */,
 				5734757321DA90F500FB6177 /* Supporting Files */,
 				5734756D21DA90C800FB6177 /* Info.plist */,
@@ -70,6 +95,35 @@
 				5734756A21DA90C800FB6177 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B71A002723ABCB60007E35AF /* VC's */ = {
+			isa = PBXGroup;
+			children = (
+				5734756321DA90C700FB6177 /* ViewController.swift */,
+				B71A001B23ABCAEB007E35AF /* DetailController.swift */,
+				B71A001D23ABCAF6007E35AF /* FavoriteController.swift */,
+			);
+			path = "VC's";
+			sourceTree = "<group>";
+		};
+		B71A002823ABCB6F007E35AF /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				B71A001F23ABCB02007E35AF /* NetworkHelper.swift */,
+				B71A002123ABCB21007E35AF /* AppError.swift */,
+				B71A002C23ABD1AF007E35AF /* ElementsAPI.swift */,
+			);
+			path = "Network Service";
+			sourceTree = "<group>";
+		};
+		B71A002923ABCD02007E35AF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B71A002323ABCB33007E35AF /* UIImage+Extension.swift */,
+				B71A002523ABCB42007E35AF /* UIView+Alerts.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +198,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5734756421DA90C700FB6177 /* ViewController.swift in Sources */,
+				B71A002D23ABD1AF007E35AF /* ElementsAPI.swift in Sources */,
+				B71A002423ABCB33007E35AF /* UIImage+Extension.swift in Sources */,
+				B71A001C23ABCAEB007E35AF /* DetailController.swift in Sources */,
+				B71A002223ABCB21007E35AF /* AppError.swift in Sources */,
+				B715677423ABD753009D3416 /* FavoritesCell.swift in Sources */,
+				B71A002023ABCB02007E35AF /* NetworkHelper.swift in Sources */,
+				B715677223ABD740009D3416 /* ElementsCell.swift in Sources */,
+				B71A002623ABCB42007E35AF /* UIView+Alerts.swift in Sources */,
+				B71A002B23ABCF79007E35AF /* ElementsData.swift in Sources */,
 				5734756221DA90C700FB6177 /* AppDelegate.swift in Sources */,
+				B71A001E23ABCAF6007E35AF /* FavoriteController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,14 +355,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 879MP5M96B;
 				INFOPLIST_FILE = Elements/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.Elements;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brendoncecilio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -310,14 +374,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 879MP5M96B;
 				INFOPLIST_FILE = Elements/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.pursuit.Elements;
+				PRODUCT_BUNDLE_IDENTIFIER = com.brendoncecilio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
