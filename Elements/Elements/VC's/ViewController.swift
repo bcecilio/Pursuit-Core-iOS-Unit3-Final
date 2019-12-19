@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func loadData() {
@@ -45,9 +47,18 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "elementCell", for: indexPath) as? ElementsCell else {
+            fatalError("could not dequeue from elements cell")
+        }
+        let elementCell = elements[indexPath.row]
+        cell.configureElementCell(for: elementCell)
+        return cell
     }
-    
-    
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
 }
 
